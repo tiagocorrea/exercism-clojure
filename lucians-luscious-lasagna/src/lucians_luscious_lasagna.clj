@@ -25,15 +25,3 @@
    Returns how many minutes in total you've worked on cooking the lasagna"
   [num-layers actual-time]
   (+ (prep-time num-layers) actual-time))
-
-(defn get-last [seq]
-  (if (empty? (rest seq))
-    (first seq)
-    (recur (rest seq))))
-
-(defn get-second-last [seq]
-  (if (= (count seq) 2)
-    (first seq)
-    (recur (rest seq))))
-
-(def number 10)
