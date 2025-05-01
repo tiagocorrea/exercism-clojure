@@ -6,4 +6,6 @@
   (let [digits (map #(Integer/parseInt (str %)) (str num))
         len (count digits)]
     (= num
-       (apply +' (map #(.pow (biginteger %) len) digits)))))
+       (->> digits
+            (map #(.pow (biginteger %) len))
+            (apply +')))))
